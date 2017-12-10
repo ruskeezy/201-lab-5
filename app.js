@@ -93,7 +93,7 @@ function sumArray(testArray){ //eslint-disable-line
   return [total, arrayMessage];
 }
 
-// comment 
+// comment
 
 // TODO: Here is the test for sumArray(); uncomment it to run it
 testSumArray(testArray);
@@ -102,17 +102,24 @@ testSumArray(testArray);
 
 /////////////////////////////////////
 /* Problem 5
-Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
+Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second el
+ement is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
 
 "The numbers 2,3,4 have a product of 24."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this.
+IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have
+ to be resourceful to figure out how to do this.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-
+  var product = 1;
+  for (var i = 0; i < testArray.length; i++) {
+    product = multiply(product, testArray[i])[0];
+  }
+  var arrayMessage = 'The numbers ' + testArray + ' have a product of ' + product + '.';
+  return [product, arrayMessage];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
